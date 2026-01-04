@@ -2,7 +2,7 @@
 title: "The Anatomy of Phishing Attacks: How to Spot and Stop Them"
 description: "A deep dive into modern phishing techniques, from basic email scams to sophisticated AI-powered attacks, and practical strategies to protect yourself and your organization."
 pubDate: "Oct 28 2025"
-heroImage: "/blog-placeholder-4.jpg"
+heroImage: "/phishing-defense-banner.png"
 ---
 
 Phishing remains the #1 attack vector for cybercriminals, and it's getting more sophisticated every day. In 2025, over 90% of successful data breaches start with a phishing email. Understanding how these attacks work is your first line of defense.

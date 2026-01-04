@@ -2,7 +2,7 @@
 title: "Password Security in 2025: What You Should Know"
 description: "Everything you need to know about creating strong passwords, using password managers, and embracing passwordless authentication for better security."
 pubDate: "Aug 10 2025"
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: "/password-security-banner.png"
 ---
 
 Passwords have been the cornerstone of digital security for decades, yet they remain one of the weakest links in our security chain. In 2025, with billions of passwords leaked in data breaches and AI making cracking faster than ever, it's time to rethink how we approach authentication.

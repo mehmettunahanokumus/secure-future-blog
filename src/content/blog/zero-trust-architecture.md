@@ -2,7 +2,7 @@
 title: "Zero Trust Architecture: Never Trust, Always Verify"
 description: "Understanding the Zero Trust security model and why organizations are rapidly adopting this approach to protect their digital assets in an increasingly hostile threat landscape."
 pubDate: "Dec 15 2025"
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: "/zero-trust-banner.png"
 ---
 
 The traditional "castle-and-moat" approach to network security is dead. In today's world of cloud computing, remote work, and sophisticated cyber threats, the perimeter-based security model that served organizations for decades is no longer sufficient. Enter **Zero Trust Architecture** — a paradigm shift that's transforming how we think about cybersecurity.

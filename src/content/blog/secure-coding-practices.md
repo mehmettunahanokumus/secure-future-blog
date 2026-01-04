@@ -2,7 +2,7 @@
 title: "Secure Coding 101: Essential Practices Every Developer Should Know"
 description: "A practical guide to writing secure code, covering common vulnerabilities like SQL injection, XSS, and authentication flaws, with examples and prevention strategies."
 pubDate: "Jul 22 2025"
-heroImage: "/blog-placeholder-5.jpg"
+heroImage: "/secure-coding-banner.png"
 ---
 
 As developers, we often focus on making things work. But in 2025, with cyberattacks targeting applications more than ever, making things **secure** is equally important. This guide covers the essential secure coding practices every developer should know.
