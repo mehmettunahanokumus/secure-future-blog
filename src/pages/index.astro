@@ -56,18 +56,21 @@ const posts = (await getCollection('blog')).sort(
 							home here. And even if you’re not, at least you’ll get an honest look at how I see the world
 							and the field I work in.
 						</p>
-						<div class="about-stats">
-							<div class="stat-item">
-								<span class="stat-number">50+</span>
-								<span class="stat-label">Projects Completed</span>
+						<div class="focus-areas">
+							<div class="focus-item">
+								<div class="focus-icon">🛡️</div>
+								<h3>Cybersecurity</h3>
+								<p>Researching threats and defense strategies.</p>
 							</div>
-							<div class="stat-item">
-								<span class="stat-number">3+</span>
-								<span class="stat-label">Years Experience</span>
+							<div class="focus-item">
+								<div class="focus-icon">🤖</div>
+								<h3>AI & ML</h3>
+								<p>Exploring the impact of AI on digital security.</p>
 							</div>
-							<div class="stat-item">
-								<span class="stat-number">100+</span>
-								<span class="stat-label">Cups of Coffee</span>
+							<div class="focus-item">
+								<div class="focus-icon">🚀</div>
+								<h3>Emerging Tech</h3>
+								<p>Tracking shifts in the technological landscape.</p>
 							</div>
 						</div>
 					</div>
@@ -215,9 +218,9 @@ const posts = (await getCollection('blog')).sort(
 		margin-bottom: 2rem;
 	}
 	
-	.about-stats {
+	.focus-areas {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 2rem;
 		margin-top: 2rem;
 		padding-top: 2rem;
@@ -262,24 +265,37 @@ const posts = (await getCollection('blog')).sort(
 	.latest-content .desc { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
 	.latest-content .meta { margin-top: 0.75rem; color: var(--text-tertiary); font-size: 0.85rem; }
 	
-	.stat-item {
+	.focus-item {
 		text-align: center;
+		padding: 1.5rem;
+		background: var(--background);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--border);
+		transition: var(--transition);
 	}
 	
-	.stat-number {
-		display: block;
-		font-size: 2rem;
-		font-weight: 700;
-		color: var(--accent);
+	.focus-item:hover {
+		transform: translateY(-5px);
+		border-color: var(--accent);
+		box-shadow: var(--shadow-md);
+	}
+	
+	.focus-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.focus-item h3 {
+		font-size: 1.25rem;
 		margin-bottom: 0.5rem;
+		color: var(--text-primary);
 	}
 	
-	.stat-label {
-		font-size: 0.875rem;
-		color: var(--text-tertiary);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		font-weight: 500;
+	.focus-item p {
+		font-size: 0.9rem;
+		color: var(--text-secondary);
+		margin-bottom: 0;
+		line-height: 1.5;
 	}
 	
 
@@ -309,7 +325,7 @@ const posts = (await getCollection('blog')).sort(
 			font-size: 1rem;
 		}
 		
-		.about-stats {
+		.focus-areas {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
 		}
