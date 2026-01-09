@@ -2,10 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -18,88 +16,96 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<ThemeToggle />
 		<Header />
-		<main>
-			<div class="hero-section fade-in">
-				<div class="hero-content">
-					<h1 class="hero-title">Securing the Digital Future</h1>
-					<p class="hero-subtitle">
-						Insights on cybersecurity, emerging technologies, and the evolving threat landscape. 
-						Exploring how to build resilient systems and stay ahead of tomorrow's challenges.
-					</p>
-					<div class="hero-actions">
-						<a href="/blog" class="btn btn-primary">Read Articles</a>
-						<a href="/about" class="btn btn-secondary">About Me</a>
+		<main class="fade-in">
+			<!-- Hero Section -->
+			<div class="hero-section">
+				<div class="hero-intro">
+					<h1 class="hello">Hello <span class="speech-icon">💬</span></h1>
+					<h1 class="name">I'm Mehmet</h1>
+					<div class="social-icons">
+						<a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+						<a href="https://linkedin.com/in/mehmettunahanokumus" target="_blank" title="LinkedIn">🔗</a>
+						<a href="https://github.com/mehmettunahanokumus" target="_blank" title="GitHub">🐙</a>
 					</div>
 				</div>
+				<div class="hero-bio">
+					<p>
+						A dedicated cybersecurity specialist and information security enthusiast. 
+						Passionate about digging into technology, understanding how things work (and how they break), 
+						and building resilient digital ecosystems for the future.
+					</p>
+				</div>
 			</div>
-			
-			<section class="about-section">
-				<h2 class="section-title">About Me</h2>
-				<div class="about-content">
-					<div class="about-text">
-						<p>
-							I work in cybersecurity and information security, but it’s more than just a job for me. I
-							genuinely enjoy digging into how technology works, where it’s headed, and how it can go
-							wrong. I’m the kind of person who falls down rabbit holes on AI models, security tools, or
-							some weird tech concept I randomly come across, just because I want to understand it.
-						</p>
-						<p>
-							This blog is basically my place to think out loud. I write about cybersecurity, technology, AI,
-							and whatever else I’m exploring at the moment. Some posts are practical, some are just me
-							connecting ideas, and some are there because I felt like chasing a thought until it made
-							sense.
-						</p>
-						<p>
-							If you’re into tech, learning, or just following someone’s curiosity in real time, you’ll feel at
-							home here. And even if you’re not, at least you’ll get an honest look at how I see the world
-							and the field I work in.
-						</p>
-						<div class="focus-areas">
-							<div class="focus-item">
-								<div class="focus-icon">🛡️</div>
-								<h3>Cybersecurity</h3>
-								<p>Researching threats and defense strategies.</p>
-							</div>
-							<div class="focus-item">
-								<div class="focus-icon">🤖</div>
-								<h3>AI & ML</h3>
-								<p>Exploring the impact of AI on digital security.</p>
-							</div>
-							<div class="focus-item">
-								<div class="focus-icon">🚀</div>
-								<h3>Emerging Tech</h3>
-								<p>Tracking shifts in the technological landscape.</p>
-							</div>
+
+			<!-- Projects Section -->
+			<section class="content-section">
+				<h2 class="section-path">~/work/projects</h2>
+				<div class="projects-grid">
+					<div class="project-card">
+						<div class="project-image" style="background: #1e293b;">
+							<span class="placeholder">SecureAuth</span>
+						</div>
+						<div class="project-info">
+							<span class="proj-name">SecureAuth</span>
+							<a href="#" class="view-link">View ↗</a>
+						</div>
+					</div>
+					<div class="project-card">
+						<div class="project-image" style="background: #334155;">
+							<span class="placeholder">VulnScan</span>
+						</div>
+						<div class="project-info">
+							<span class="proj-name">VulnScan</span>
+							<a href="#" class="view-link">View ↗</a>
+						</div>
+					</div>
+					<div class="project-card">
+						<div class="project-image" style="background: #475569;">
+							<span class="placeholder">CryptoKit</span>
+						</div>
+						<div class="project-info">
+							<span class="proj-name">CryptoKit</span>
+							<a href="#" class="view-link">View ↗</a>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="latest-posts-section">
-				<h2 class="section-title">Latest Posts</h2>
-				<div class="latest-posts-grid">
+			<!-- Experience Section -->
+			<section class="content-section">
+				<h2 class="section-path">~/work/experience</h2>
+				<div class="experience-list">
+					<div class="experience-item">
+						<h3>▶ Cybersecurity Analyst</h3>
+						<p class="exp-meta">July 2023 - Present</p>
+					</div>
+					<div class="experience-item">
+						<h3>▶ Information Security Intern</h3>
+						<p class="exp-meta">January 2023 - June 2023</p>
+					</div>
+					<div class="experience-item">
+						<h3>▶ Independent Security Research</h3>
+						<p class="exp-meta">2021 - 2023</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Blog Section -->
+			<section class="content-section">
+				<h2 class="section-path">~/blog/documentations</h2>
+				<div class="blog-list">
 					{
 						posts.map((post) => (
-							<article class="latest-card">
-								<a href={`/blog/${post.id}/`} class="latest-link">
-									<div class="latest-image">
-										<img src={post.data.heroImage} alt={post.data.title} loading="lazy" />
-									</div>
-									<div class="latest-content">
-										<h3>{post.data.title}</h3>
-										<p class="desc">{post.data.description}</p>
-										<div class="meta"><FormattedDate date={post.data.pubDate} /></div>
-									</div>
-								</a>
-							</article>
+							<a href={`/blog/${post.id}/`} class="blog-item">
+								<span class="blog-icon">🏷️</span>
+								<span class="blog-title">{post.data.title}</span>
+								<span class="blog-time">▶ ({post.data.pubDate.toLocaleDateString()})</span>
+							</a>
 						))
 					}
 				</div>
 			</section>
-			
-
 		</main>
 		<Footer />
 	</body>
@@ -107,235 +113,205 @@ const posts = (await getCollection('blog')).sort(
 
 <style>
 	.hero-section {
-		text-align: center;
-		padding: 4rem 0 6rem;
-		background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
-		border-radius: var(--radius-xl);
-		margin-bottom: 4rem;
-	}
-	
-	.hero-content {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
-	
-	.hero-title {
-		font-size: clamp(2.5rem, 6vw, 4rem);
-		font-weight: 800;
-		margin-bottom: 1.5rem;
-		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		line-height: 1.1;
-	}
-	
-	.hero-subtitle {
-		font-size: 1.25rem;
-		color: var(--text-secondary);
-		margin-bottom: 2.5rem;
-		line-height: 1.6;
-	}
-	
-	.hero-actions {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-	
-	.btn {
-		display: inline-flex;
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		gap: 4rem;
 		align-items: center;
-		padding: 0.875rem 2rem;
-		border-radius: var(--radius-lg);
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1rem;
-		transition: var(--transition);
-		border: 2px solid transparent;
+		margin-bottom: 8rem;
+		padding: 2rem 0;
 	}
-	
-	.btn-primary {
-		background: var(--accent);
-		color: white;
-	}
-	
-	.btn-primary:hover {
-		background: var(--accent-dark);
-		transform: translateY(-2px);
-		box-shadow: var(--shadow-lg);
-		text-decoration: none;
-	}
-	
-	.btn-secondary {
-		background: transparent;
-		color: var(--text-primary);
-		border-color: var(--border);
-	}
-	
-	.btn-secondary:hover {
-		background: var(--background-secondary);
-		border-color: var(--accent);
-		color: var(--accent);
-		transform: translateY(-2px);
-		text-decoration: none;
-	}
-	
-	.section-title {
-		text-align: center;
-		margin-bottom: 3rem;
+
+	.hello {
 		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+		color: var(--text-primary);
+		font-weight: 400;
+	}
+
+	.name {
+		font-size: clamp(3rem, 8vw, 5rem);
 		font-weight: 700;
-	}
-	
-	.about-section {
-		margin-bottom: 5rem;
-	}
-	
-	.about-content {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-	
-	.about-text {
-		background: var(--background-secondary);
-		padding: 3rem;
-		border-radius: var(--radius-xl);
-		border: 1px solid var(--border);
-		box-shadow: var(--shadow-sm);
-	}
-	
-	.about-text p {
-		font-size: 1.125rem;
-		line-height: 1.7;
-		margin-bottom: 1.5rem;
-		color: var(--text-secondary);
-	}
-	
-	.about-text p:last-of-type {
 		margin-bottom: 2rem;
+		color: var(--text-primary);
+		line-height: 1;
 	}
-	
-	.focus-areas {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+	.speech-icon {
+		font-size: 1.5rem;
+		vertical-align: middle;
+	}
+
+	.social-icons {
+		display: flex;
 		gap: 2rem;
-		margin-top: 2rem;
-		padding-top: 2rem;
-		border-top: 1px solid var(--border);
+		font-size: 1.8rem;
 	}
 
-	.latest-posts-section {
-		margin-top: 3rem;
-		margin-bottom: 5rem;
+	.social-icons a {
+		text-decoration: none;
+		transition: var(--transition);
+		opacity: 0.8;
 	}
 
-	.latest-posts-grid {
+	.social-icons a:hover {
+		transform: translateY(-5px);
+		opacity: 1;
+		color: var(--accent);
+	}
+
+	.hero-bio p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--text-secondary);
+		margin: 0;
+	}
+
+	.content-section {
+		margin-bottom: 8rem;
+	}
+
+	.section-path {
+		font-size: 1.4rem;
+		color: var(--text-primary);
+		margin-bottom: 3rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+	}
+
+	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 1.5rem;
-		max-width: 1100px;
-		margin: 0 auto;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2.5rem;
 	}
 
-	.latest-card {
-		background: var(--background-secondary);
+	.project-card {
 		border: 1px solid var(--border);
 		border-radius: var(--radius-lg);
 		overflow: hidden;
+		background: var(--background-secondary);
 		transition: var(--transition);
 	}
 
-	.latest-card:hover {
-		transform: translateY(-4px);
-		box-shadow: var(--shadow-lg);
-		border-color: var(--accent-light);
-	}
-
-	.latest-link { display: block; color: inherit; text-decoration: none; }
-
-	.latest-image { aspect-ratio: 16 / 9; overflow: hidden; }
-	.latest-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-	.latest-content { padding: 1rem; }
-
-	.latest-content h3 { margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-primary); }
-	.latest-content .desc { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
-	.latest-content .meta { margin-top: 0.75rem; color: var(--text-tertiary); font-size: 0.85rem; }
-	
-	.focus-item {
-		text-align: center;
-		padding: 1.5rem;
-		background: var(--background);
-		border-radius: var(--radius-lg);
-		border: 1px solid var(--border);
-		transition: var(--transition);
-	}
-	
-	.focus-item:hover {
-		transform: translateY(-5px);
+	.project-card:hover {
 		border-color: var(--accent);
-		box-shadow: var(--shadow-md);
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-lg);
 	}
-	
-	.focus-icon {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
+
+	.project-image {
+		aspect-ratio: 16 / 9;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		color: rgba(255,255,255,0.1);
+		font-size: 1.5rem;
+		border-bottom: 1px solid var(--border);
 	}
-	
-	.focus-item h3 {
-		font-size: 1.25rem;
+
+	.project-info {
+		padding: 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.proj-name {
+		font-weight: 600;
+		color: var(--text-primary);
+		font-size: 1.1rem;
+	}
+
+	.view-link {
+		font-size: 0.95rem;
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.experience-item {
+		margin-bottom: 3rem;
+		padding-left: 1.5rem;
+		border-left: 2px solid var(--border);
+		transition: var(--transition);
+	}
+
+	.experience-item:hover {
+		border-left-color: var(--accent);
+	}
+
+	.experience-item h3 {
+		font-size: 1.2rem;
 		margin-bottom: 0.5rem;
 		color: var(--text-primary);
 	}
-	
-	.focus-item p {
-		font-size: 0.9rem;
-		color: var(--text-secondary);
-		margin-bottom: 0;
-		line-height: 1.5;
-	}
-	
 
-	
-	@media (max-width: 768px) {
+	.exp-meta {
+		font-size: 0.95rem;
+		color: var(--text-tertiary);
+		margin: 0;
+	}
+
+	.blog-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.blog-item {
+		display: flex;
+		align-items: center;
+		padding: 1.5rem 0;
+		border-bottom: 1px solid var(--border);
+		text-decoration: none;
+		transition: var(--transition);
+		gap: 1.5rem;
+	}
+
+	.blog-item:hover {
+		padding-left: 1rem;
+		background: rgba(245, 158, 11, 0.03);
+	}
+
+	.blog-icon {
+		font-size: 1.2rem;
+		color: var(--accent);
+	}
+
+	.blog-title {
+		color: var(--text-primary);
+		flex: 1;
+		font-size: 1.1rem;
+		font-weight: 500;
+	}
+
+	.blog-time {
+		color: var(--text-tertiary);
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 900px) {
 		.hero-section {
-			padding: 3rem 0 4rem;
-			margin-bottom: 3rem;
+			grid-template-columns: 1fr;
+			gap: 3rem;
+			text-align: center;
 		}
-		
-		.hero-actions {
-			flex-direction: column;
-			align-items: center;
-		}
-		
-		.btn {
-			width: 100%;
-			max-width: 280px;
+
+		.social-icons {
 			justify-content: center;
 		}
-		
-		.about-text {
-			padding: 2rem;
+
+		.experience-item {
+			padding-left: 1rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.name {
+			font-size: 3rem;
 		}
 		
-		.about-text p {
-			font-size: 1rem;
-		}
-		
-		.focus-areas {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-		
-		.steps-grid {
-			grid-template-columns: 1fr;
-		}
-		
-		.section-title {
-			font-size: 2rem;
+		.section-path {
+			font-size: 1.1rem;
 		}
 	}
 </style>

@@ -4,74 +4,42 @@
  */
 
 :root {
-  /* Light mode colors */
-  --accent: #3b82f6;
-  --accent-dark: #1d4ed8;
-  --accent-light: #93c5fd;
+  /* Terminal Theme Colors */
+  --accent: #F59E0B; /* Solar Gold */
+  --accent-dark: #D97706;
+  --accent-light: #FCD34D;
   
-  --primary: #1f2937;
-  --primary-light: #374151;
-  --secondary: #6b7280;
-  --secondary-light: #9ca3af;
+  --background: #0A0C10; /* Deep Space Black */
+  --background-secondary: #161B22;
+  --background-tertiary: #21262D;
   
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-tertiary: #484F58;
+  
+  --border: #30363D;
+  --border-light: #21262D;
+  
+  --shadow-sm: 0 1px 0 rgba(0,0,0,0.4);
+  --shadow: 0 2px 8px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.7);
+  
+  --radius: 4px; /* Sharper corners for terminal look */
+  --radius-lg: 6px;
+  --radius-xl: 10px;
+  
+  --transition: all 0.2s ease;
+  --mono-font: 'JetBrains Mono', 'Roboto Mono', 'Fira Code', monospace;
+}
+
+/* We force the dark theme colors for now as the terminal design is dark-centric */
+[data-theme="light"] {
   --background: #ffffff;
-  --background-secondary: #f9fafb;
-  --background-tertiary: #f3f4f6;
-  
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --text-tertiary: #9ca3af;
-  
-  --border: #e5e7eb;
-  --border-light: #f3f4f6;
-  
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  --radius: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-theme="dark"] {
-  /* Dark mode colors */
-  --accent: #60a5fa;
-  --accent-dark: #3b82f6;
-  --accent-light: #1e40af;
-  
-  --primary: #f9fafb;
-  --primary-light: #e5e7eb;
-  --secondary: #d1d5db;
-  --secondary-light: #9ca3af;
-  
-  --background: #0f172a;
-  --background-secondary: #1e293b;
-  --background-tertiary: #334155;
-  
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-tertiary: #94a3b8;
-  
-  --border: #334155;
-  --border-light: #475569;
-  
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-  font-display: swap;
+  --background-secondary: #f6f8fa;
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  --border: #d0d7de;
 }
 
 * {
@@ -83,24 +51,22 @@ html {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--mono-font);
   margin: 0;
   padding: 0;
   background: var(--background);
   color: var(--text-primary);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
-  font-weight: 400;
-  transition: var(--transition);
+  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px; /* Slimmer for reading */
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 4rem 1.5rem;
   min-height: calc(100vh - 200px);
 }
 
