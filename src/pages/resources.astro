@@ -1,0 +1,149 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Resources | ${SITE_TITLE}`} description="Cybersecurity resources, tools, and learning materials" />
+	</head>
+	<body>
+		<Header />
+		<main class="fade-in">
+			<section class="page-header">
+				<h1 class="page-title">~/resources</h1>
+				<p class="page-description">Curated cybersecurity resources, tools, and learning materials</p>
+			</section>
+
+			<div class="resources-section">
+				<h2 class="section-title">Learning Platforms</h2>
+				<div class="resource-list">
+					<a href="https://tryhackme.com" target="_blank" class="resource-item">
+						<span class="resource-name">TryHackMe</span>
+						<span class="resource-desc">Hands-on cybersecurity training platform</span>
+					</a>
+					<a href="https://hackthebox.com" target="_blank" class="resource-item">
+						<span class="resource-name">Hack The Box</span>
+						<span class="resource-desc">Penetration testing labs and challenges</span>
+					</a>
+					<a href="https://portswigger.net/web-security" target="_blank" class="resource-item">
+						<span class="resource-name">PortSwigger Web Security Academy</span>
+						<span class="resource-desc">Free web security training</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="resources-section">
+				<h2 class="section-title">Tools</h2>
+				<div class="resource-list">
+					<a href="https://www.kali.org" target="_blank" class="resource-item">
+						<span class="resource-name">Kali Linux</span>
+						<span class="resource-desc">Security-focused Linux distribution</span>
+					</a>
+					<a href="https://www.wireshark.org" target="_blank" class="resource-item">
+						<span class="resource-name">Wireshark</span>
+						<span class="resource-desc">Network protocol analyzer</span>
+					</a>
+					<a href="https://www.metasploit.com" target="_blank" class="resource-item">
+						<span class="resource-name">Metasploit</span>
+						<span class="resource-desc">Penetration testing framework</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="resources-section">
+				<h2 class="section-title">References</h2>
+				<div class="resource-list">
+					<a href="https://owasp.org/www-project-top-ten/" target="_blank" class="resource-item">
+						<span class="resource-name">OWASP Top 10</span>
+						<span class="resource-desc">Web application security risks</span>
+					</a>
+					<a href="https://attack.mitre.org" target="_blank" class="resource-item">
+						<span class="resource-name">MITRE ATT&CK</span>
+						<span class="resource-desc">Adversary tactics and techniques</span>
+					</a>
+					<a href="https://cve.mitre.org" target="_blank" class="resource-item">
+						<span class="resource-name">CVE Database</span>
+						<span class="resource-desc">Common Vulnerabilities and Exposures</span>
+					</a>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.page-header {
+		margin-bottom: 4rem;
+	}
+
+	.page-title {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--text-primary);
+		margin-bottom: 1rem;
+	}
+
+	.page-description {
+		color: var(--text-secondary);
+		font-size: 1.1rem;
+	}
+
+	.resources-section {
+		margin-bottom: 3rem;
+	}
+
+	.section-title {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: var(--text-primary);
+		margin-bottom: 1.5rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.resource-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resource-item {
+		display: flex;
+		flex-direction: column;
+		padding: 1.25rem 0;
+		border-bottom: 1px solid var(--border);
+		text-decoration: none;
+		transition: var(--transition);
+	}
+
+	.resource-item:hover {
+		padding-left: 1rem;
+		background: rgba(245, 158, 11, 0.03);
+	}
+
+	.resource-name {
+		color: var(--text-primary);
+		font-weight: 500;
+		font-size: 1.05rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.resource-item:hover .resource-name {
+		color: var(--accent);
+	}
+
+	.resource-desc {
+		color: var(--text-tertiary);
+		font-size: 0.9rem;
+	}
+</style>

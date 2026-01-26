@@ -1,0 +1,140 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Projects | ${SITE_TITLE}`} description="My cybersecurity and development projects" />
+	</head>
+	<body>
+		<Header />
+		<main class="fade-in">
+			<section class="page-header">
+				<h1 class="page-title">~/work/projects</h1>
+				<p class="page-description">Security tools and projects I've been working on</p>
+			</section>
+
+			<div class="projects-grid">
+				<div class="project-card">
+					<div class="project-image" style="background: #1e293b;">
+						<span class="placeholder">SecureAuth</span>
+					</div>
+					<div class="project-info">
+						<h3 class="proj-name">SecureAuth</h3>
+						<p class="proj-desc">A multi-factor authentication framework with biometric support and adaptive security policies.</p>
+						<a href="#" class="view-link">View Project</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<div class="project-image" style="background: #334155;">
+						<span class="placeholder">VulnScan</span>
+					</div>
+					<div class="project-info">
+						<h3 class="proj-name">VulnScan</h3>
+						<p class="proj-desc">Automated vulnerability scanner for web applications with custom rule engine and CI/CD integration.</p>
+						<a href="#" class="view-link">View Project</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<div class="project-image" style="background: #475569;">
+						<span class="placeholder">CryptoKit</span>
+					</div>
+					<div class="project-info">
+						<h3 class="proj-name">CryptoKit</h3>
+						<p class="proj-desc">Encryption toolkit for developers with support for modern cryptographic algorithms and secure key management.</p>
+						<a href="#" class="view-link">View Project</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.page-header {
+		margin-bottom: 4rem;
+	}
+
+	.page-title {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--text-primary);
+		margin-bottom: 1rem;
+	}
+
+	.page-description {
+		color: var(--text-secondary);
+		font-size: 1.1rem;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2.5rem;
+	}
+
+	.project-card {
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		background: var(--background-secondary);
+		transition: var(--transition);
+	}
+
+	.project-card:hover {
+		border-color: var(--accent);
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.project-image {
+		aspect-ratio: 16 / 9;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		color: rgba(255,255,255,0.1);
+		font-size: 1.5rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.project-info {
+		padding: 1.5rem;
+	}
+
+	.proj-name {
+		font-weight: 600;
+		color: var(--text-primary);
+		font-size: 1.2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.proj-desc {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.view-link {
+		font-size: 0.95rem;
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.view-link:hover {
+		text-decoration: underline;
+	}
+</style>
