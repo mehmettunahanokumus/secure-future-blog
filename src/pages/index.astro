@@ -19,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main class="fade-in">
 			<!-- Hero Section -->
-			<div class="hero-section">
+			<div id="about" class="hero-section">
 				<div class="hero-intro">
 					<h1 class="hello">Hello <span class="speech-icon">💬</span></h1>
 					<h1 class="name">I'm Mehmet</h1>
@@ -39,7 +39,7 @@ const posts = (await getCollection('blog')).sort(
 			</div>
 
 			<!-- Projects Section -->
-			<section class="content-section">
+			<section id="projects" class="content-section">
 				<h2 class="section-path">~/work/projects</h2>
 				<div class="projects-grid">
 					<div class="project-card">
@@ -73,7 +73,7 @@ const posts = (await getCollection('blog')).sort(
 			</section>
 
 			<!-- Blog Section -->
-			<section class="content-section">
+			<section id="blog" class="content-section">
 				<h2 class="section-path">~/blog/documentations</h2>
 				<div class="blog-list">
 					{
